@@ -26,15 +26,15 @@ const Person = ({route, favPersons, dispatch}) => {
     }, []);
 
     const savePerson = async () => {
-        const action = { type: 'SAVE_PERSON', value: route.params.personID };
+        const action = { type: 'SAVE_PERSON', value: id };
         dispatch(action);
         Toast.show('Personne ajouté aux favoris', {
-          duration: Toast.durations.LONG,
+            duration: Toast.durations.LONG,
         });
     }
     
     const unsavePerson= async () => {
-        const action = { type: 'UNSAVE_PERSON', value: route.params.personID };
+        const action = { type: 'UNSAVE_PERSON', value: id };
         dispatch(action);
         Toast.show('Personne retiré des favoris', {
             duration: Toast.durations.LONG,
@@ -42,13 +42,13 @@ const Person = ({route, favPersons, dispatch}) => {
     }
 
     const displaySavePerson = () => {
-        if (favPersons.findIndex(i => i === route.params.personID) !== -1) {
+        if (favPersons.findIndex(i => i === id) !== -1) {
             return ( 
-                <Button title='Retirer des favoris' onPress={unsavePerson} /> 
+                <Button title='Faved' onPress={unsavePerson} /> 
             );
         }
         return ( 
-            <Button title='Ajouter aux favoris' onPress={savePerson} /> 
+            <Button title='Fav' onPress={savePerson} /> 
         );
       }
 
