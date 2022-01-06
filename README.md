@@ -24,7 +24,11 @@ Ajouter vos remarques ici si besoin
 Problème de compilation irrésolvable : demande de reset du cache de metro car il ne trouve pas la librairie @react mais commande impossible à executer. Impossibilité de vérifier le code produit => code à l'aveugle
 
 Commande qu'il faudrait executer mais qui revoit des erreurs: 
-### watchman watch-del-all
-### delete node_modules and run yarn install
-### yarn start --reset-cache 
-### rm -rf /tmp/metro-*
+
+watchman watch-del-all
+
+delete node_modules and run yarn install
+
+yarn start --reset-cache 
+
+rm -rf /tmp/metro-*
